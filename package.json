@@ -8,7 +8,9 @@
     "dev": "concurrently \"cd ./client && npm run dev\" \"cd ./server && npm run dev\"",
     "install:client": "cd ./client && npm i",
     "install": "cd ./server && npm i",
-    "deploy": "concurrently \"npm run client:build\" \"git add -A && git commit -m \"ready for deploy\" \" \"git push heroku main\"",
+    "save": "git add -A && git commit -m \"ready for deploy\"",
+    "push": "git push heroku main",
+    "deploy": "npm run client:build && npm run save && npm run push",
     "start": "cd ./server && npm start"
   },
   "keywords": [],
