@@ -10,6 +10,8 @@
     "install": "cd ./server && npm i",
     "save": "git add -A && git commit -m \"ready for deploy\"",
     "push": "git push heroku main",
+    "push:render": "git push origin main",
+    "deploy:render": "npm run client:build && npm run save && npm run push:render",
     "deploy": "npm run client:build && npm run save && npm run push",
     "start": "cd ./server && npm start"
   },
