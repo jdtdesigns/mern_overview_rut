@@ -2,6 +2,8 @@ const Note = require('../models/Note')
 
 module.exports = {
   async createNote(req, res) {
+    console.log(req.body)
+
     const note = await Note.create(req.body)
 
     res.json(note)

@@ -1,13 +1,15 @@
 import { NavLink } from 'react-router-dom'
 
-function Header() {
+function Header({ setShowNoteForm }) {
+  const showModal = () => setShowNoteForm(true)
+
   return (
     <header className="row justify-between align-center">
       <h3>Note App</h3>
 
       <nav>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/form">Create|Edit Note</NavLink>
+        <button onClick={showModal} className="create-btn">Create Note</button>
       </nav>
     </header>
   )
