@@ -42,7 +42,10 @@ function NoteForm({
     setEditNote(null)
   }
 
-  const closeModal = () => setShowNoteForm(false)
+  const closeModal = () => {
+    setEditNote(null)
+    setShowNoteForm(false)
+  }
 
   const handleInputChange = (e) => {
     setNoteText(e.target.value)

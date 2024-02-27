@@ -3,9 +3,10 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
+import NoteForm from './components/NoteForm'
 
 import Home from './pages/Home'
-import NoteForm from './components/NoteForm'
+import NotFound from './pages/NotFound'
 
 
 function App() {
@@ -33,6 +34,8 @@ function App() {
               setShowNoteForm={setShowNoteForm}
               notes={notes}
               setNotes={setNotes} />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   )

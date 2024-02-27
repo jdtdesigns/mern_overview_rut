@@ -21,11 +21,20 @@ function Home({
   }
 
   const deleteNote = async (note_id, index) => {
-    await axios.delete('/api/note/' + note_id)
+    // Show a confirmation dialog before deleting the note
+    const confirmDelete = window.confirm('Are you sure you want to delete this note?');
 
-    notes.splice(index, 1)
+    if (confirmDelete) {
+      // If user confirms, proceed with deletion
+      await axios.delete('/api/note/' + note_id);
+      notes.splice(index, 1);
+      setNotes([...notes]);
+    } else {
+      // If user cancels, do nothing
+      console.log('Deletion canceled by user');
+    }
 
-    setNotes([...notes])
+    setEditNote(null)
   }
 
   return (
