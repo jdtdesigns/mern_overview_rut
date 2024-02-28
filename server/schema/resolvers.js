@@ -16,11 +16,11 @@ const resolvers = {
       const notes = await Note.find()
 
       return notes
-    }
+    },
+    ...user_resolvers.queries,
   },
 
   Mutation: {
-    ...user_resolvers.queries,
     ...user_resolvers.mutations
   }
 }
