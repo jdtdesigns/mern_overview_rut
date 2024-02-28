@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
+import './header.css'
 
-import { useStore } from '../store'
+import { useStore } from '../../store'
 
 function Header() {
   const { state, setState } = useStore()

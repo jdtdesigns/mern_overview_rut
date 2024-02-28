@@ -73,29 +73,6 @@ button:focus-visible {
 }
 
 /* Custom Styles */
-header nav a {
-  color: #eee;
-}
-
-header nav a:not(:last-child) {
-  margin-right: 20px;
-}
-
-header nav a:hover, header nav a.active {
-  text-decoration: underline;
-}
-
-header nav button.create-btn {
-  background: none;
-  border: 2px solid #eee;
-  padding: 5px 10px 6px;
-  transition: all .3s;
-}
-
-header nav button.create-btn:hover {
-  background: #eee;
-  color: #444;
-}
 
 /* Note Form Styles */
 .note-form {
