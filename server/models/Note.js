@@ -5,6 +5,11 @@ const noteSchema = new Schema({
     type: String,
     required: true,
     min: [4, 'Your note must be at least 4 characters in length']
+  },
+
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   }
 }, {
   timestamps: true
