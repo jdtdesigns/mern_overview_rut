@@ -1,4 +1,6 @@
 const gql = String.raw;
+const userTypeDefs = require('./userTypeDefs')
+
 
 const typeDefs = gql`
   type Note {
@@ -16,11 +18,11 @@ const typeDefs = gql`
 
   type Query {
     getAllNotes: [Note]
+    ${userTypeDefs.queries}
   }
 
   type Mutation {
-    registerUser(username: String!, email: String!, password: String!): User
-    loginUser(email: String!, password: String!): User
+    ${userTypeDefs.mutations}
   }
 `
 
