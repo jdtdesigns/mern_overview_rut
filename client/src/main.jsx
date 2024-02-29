@@ -5,14 +5,22 @@ import './index.css'
 
 import { BrowserRouter } from 'react-router-dom'
 
-import { Provider } from './store'
+import { StoreProvider } from './store'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider>
-        <App />
-      </Provider>
+      <ApolloProvider client={client}>
+        <StoreProvider>
+          <App />
+        </StoreProvider>
+      </ApolloProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

@@ -43,9 +43,6 @@ userSchema.pre('save', async function (next) {
 });
 
 userSchema.methods.validatePass = async function (formPassword) {
-  console.log('form', formPassword)
-  console.log('encrypted', this.password)
-
   const is_valid = await compare(formPassword, this.password);
 
   return is_valid;

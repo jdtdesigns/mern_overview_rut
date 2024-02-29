@@ -64,6 +64,10 @@ button:focus-visible {
   justify-content: space-between;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .align-center {
   align-items: center;
 }
@@ -73,6 +77,16 @@ button:focus-visible {
 }
 
 /* Custom Styles */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: #242424;
+  color: #aaa;
+}
 
 /* Note Form Styles */
 .note-form {
@@ -96,6 +110,10 @@ button:focus-visible {
   margin-bottom: 15px; 
   border: none;
   border-radius: 7px;
+}
+
+.note-form form p.error {
+  color: #da4d3f;
 }
 
 .note-form form input {
@@ -128,6 +146,16 @@ button:focus-visible {
 
 .note .delete-btn {
   background: #c81605;
+}
+
+.auth-status-wrap span {
+  margin: 0 5px;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+}
+
+.auth-status-wrap span.active {
+  border-color: #fff;
 }
 
 @media (prefers-color-scheme: light) {

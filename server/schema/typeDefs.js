@@ -6,6 +6,7 @@ const typeDefs = gql`
     text: String
     createdAt: String
     updatedAt: String
+    user: User
   }
 
   type User {
@@ -14,13 +15,24 @@ const typeDefs = gql`
     email: String
   }
 
+  type Success {
+    message: String
+  }
+
   type Query {
     getAllNotes: [Note]
+    getUserNotes: [Note]
+    authenticate: User
   }
 
   type Mutation {
     registerUser(username: String!, email: String!, password: String!): User
     loginUser(email: String!, password: String!): User
+    logoutUser: Success
+
+    createNote(text: String!): Note
+    editNote(text: String, note_id: ID): Success
+    deleteNote(note_id: ID): Success
   }
 `
 
