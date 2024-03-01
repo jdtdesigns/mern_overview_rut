@@ -12,7 +12,7 @@ module.exports = {
   },
 
   mutations: {
-    createNote: protect(async (_, args, { req, res, user_id }) => {
+    createNote: protect(async (_, args, { user_id }) => {
       try {
         const user = await User.findById(user_id)
         const note = await Note.create({

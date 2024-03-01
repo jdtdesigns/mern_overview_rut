@@ -5,12 +5,14 @@ require('dotenv').config()
 const db = require('./config/connection')
 const path = require('path')
 
+// Import the packages to set up the GraphQL Apollo Server
 const { ApolloServer } = require('@apollo/server')
 const { expressMiddleware } = require('@apollo/server/express4')
 
 const app = express()
 const PORT = process.env.PORT || 3333
 
+// Import the two parts of the Apollo Server - resolvers (actual functional code) & typeDefs (describe and "types" out our resolver code)
 const { typeDefs, resolvers } = require('./schema')
 
 async function startServer() {

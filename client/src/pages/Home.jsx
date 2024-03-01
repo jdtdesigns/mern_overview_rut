@@ -1,6 +1,5 @@
 import dayjs from 'dayjs'
 
-import { useStore } from '../store'
 import { useQuery } from '@apollo/client'
 
 import { GET_ALL_NOTES } from '../graphql/queries'
