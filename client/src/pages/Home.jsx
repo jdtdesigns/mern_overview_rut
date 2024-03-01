@@ -7,6 +7,9 @@ import { GET_ALL_NOTES } from '../graphql/queries'
 function Home() {
   const { data: noteData } = useQuery(GET_ALL_NOTES)
 
+
+  if (noteData) console.log(noteData)
+
   return (
     <div>
       <h1>Welcome to the Note App</h1>

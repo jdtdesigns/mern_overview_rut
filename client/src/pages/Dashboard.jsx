@@ -3,14 +3,14 @@ import dayjs from 'dayjs'
 import { useStore } from '../store'
 import { useQuery, useMutation } from '@apollo/client'
 
-import { GET_USER_NOTES } from '../graphql/queries'
+import { GET_USER_NOTES, GET_ALL_NOTES } from '../graphql/queries'
 import { DELETE_NOTE } from '../graphql/mutations'
 
 function Dashboard() {
   const { state, setState } = useStore()
   const { data: noteData } = useQuery(GET_USER_NOTES)
   const [deleteNote] = useMutation(DELETE_NOTE, {
-    refetchQueries: [GET_USER_NOTES]
+    refetchQueries: [GET_USER_NOTES, GET_ALL_NOTES]
   })
 
   const handleEditNote = (note) => {

@@ -8,10 +8,10 @@
     "build:client": "cd ./client && npm run build",
     "add": "git add -A",
     "commit": "git commit -m \"ready for deploy\"",
-    "push": "git push heroku HEAD:main",
     "deploy": "npm run build:client && npm run add && npm run commit && git push heroku HEAD:main",
     "dev": "concurrently \"cd ./client && npm run dev\" \"cd ./server && npm run dev\"",
-    "start": "cd ./server && npm start"
+    "start": "cd ./server && npm start",
+    "start:test": "cd ./server && NODE_ENV=production npm start"
   },
   "keywords": [],
   "author": "",

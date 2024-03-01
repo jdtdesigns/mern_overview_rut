@@ -37,7 +37,7 @@ function Header() {
       <nav className="row align-center">
         {state.user ? (
           <>
-            <p>Welcome, {state.user.username}</p>
+            <p>Welcome, {state.user?.username}</p>
             <NavLink to="/">Home</NavLink>
             <NavLink className="nav-btn" to="/dashboard">Dashboard</NavLink>
 
