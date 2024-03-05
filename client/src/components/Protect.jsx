@@ -8,9 +8,11 @@ function Protect({ children }) {
   const location = useLocation()
 
   useEffect(() => {
-    if (state.user && location.pathname === '/auth') return navigate('/dashboard')
+    if (!state.loading) {
+      if (state.user && location.pathname === '/auth') return navigate('/dashboard')
 
-    if (!state.user && !location.pathname.includes('auth')) return navigate('/auth')
+      if (!state.user && !location.pathname.includes('auth')) return navigate('/auth')
+    }
   }, [state.user])
 
   return (
